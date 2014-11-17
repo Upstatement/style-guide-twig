@@ -1,0 +1,24 @@
+{
+  "name": "ups-style-guide-twig",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Upstatement/style-guide-twig",
+  "authors": [
+    "Tito Bottitta <tito@upstatement.com>"
+  ],
+  "description": "Upstatement Style Guide for Twig/Timber",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "google-code-prettify": "~1.0.3",
+    "modernizr": "~2.8.3",
+    "Upbase": "git@github.com:Upstatement/upbase.git#~0.1.91"
+  }
+}

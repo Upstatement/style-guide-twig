@@ -1,0 +1,50 @@
+{# Style Guide Template #}
+
+{% set client = 'Harvard Law Review' %}
+{% set path = '/wp-content/themes/hlr' %}
+
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6 ie oldie" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7 ie oldie" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8 ie oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+	<head>
+	  <meta charset="utf-8">
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	  <title>{{client}}: Style Library</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	    <link rel="stylesheet" type="text/css" href="{{path}}/style-guide/css/style-guide.css"/>
+
+	    {% block header_scripts %}
+	        {# Contains optional, template-specific scripts #}
+	    {% endblock header_scripts %}
+
+	    <script type="text/javascript" src="{{path}}/style-guide/bower_components/modernizr/modernizr.js"></script>
+
+	</head>
+
+	<body class="{{body_classes ? body_classes}}" {%if code_highlights %} onload="prettyPrint()"{% endif %} >
+
+		{% block content %}
+		    {# Primary page content #}
+		{% endblock content %}
+
+		<footer class="style-bd-ftr">
+
+			<!-- Style Guide Scripts -->
+		    <script type="text/javascript" src="{{path}}/style-guide/bower_components/jquery/dist/jquery.js"></script>
+
+			{% block footer_scripts %}
+	          {# Contains optional, template-specific scripts #}
+			{% endblock footer_scripts %}
+
+		    <script type="text/javascript" src="{{path}}/style-guide/js/style-guide.js"></script>
+
+		</footer>
+
+	</body>
+
+</html>

@@ -1,0 +1,38 @@
+<article class="style-mod style-mod--{{title ? title|sanitize}} {{class}}" id="{{title ? title|sanitize}}">
+	<hgroup class="style-hgroup">
+		<h3 class="style-h">{{title}}</h3>
+		<a class="code-btn details-trigger"><i class="verb">Show</i> Code</a>
+	</hgroup>
+	<div class="inner">
+		<div class="style-example style-example--{{title ? title|sanitize}}">
+			{% block markup %}
+
+			{% endblock markup %}
+		</div>
+	</div> <!-- /inner -->
+	<section class="style-details">
+
+
+		{% if descriptions %}
+
+			{% block descriptions %}
+
+			<article class="style-meta inner">
+				<h4 class="detail-h">Description</h4>
+				<ul class="detail-list">
+					{% for description in descriptions %}
+						<li><p>{{description}}</p></li>
+					{% endfor %}
+				</ul>
+			</article>  <!-- /style-meta -->
+
+			{% endblock descriptions %}
+
+		{% endif %} {# /descriptions #}
+
+		<article class="code-example inner">
+			<h4 class="detail-h" title="Copy to Clipboard">Code Snip <i class="code-copy">Copy to clipboard</i></h4>
+			<pre class="html-code prettyprint linenums"></pre>
+		</article>
+	</section> <!-- /style-details -->
+</article> <!-- /style-mod -->

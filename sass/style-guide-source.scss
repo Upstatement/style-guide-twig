@@ -1,0 +1,236 @@
+// =============================================
+
+//  Style Guide Source
+
+// =============================================
+
+
+// Bring in all Compass Helpers
+@import "components/style-guide-imports.scss";
+
+//
+// Style Example
+//
+
+// Set universal side padding here
+$side-pad: 16px;
+
+.style-group-h {
+	color: #000;
+	padding: 0px 7px 9px;
+	font-size: 16px;
+	margin-bottom: 20px;
+	@include text-shadow(rgba(255,255,255,.15) 0 -1px 1px);
+	border-bottom: 1px solid #e5e5e5;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.style-mod {
+	background-color: #fff;
+	margin-bottom: 40px;
+	@include border-radius(2px);
+	@include box-shadow(rgba(0,0,0,.1) 0px 0 5px);	// border-bottom: 1px solid #e5e5e5;
+	overflow: hidden;
+	// max-width:700px;
+	> .inner {
+		padding: 24px;
+	}
+}
+
+.style-hgroup {
+	// Box
+	background-color: #ededed;
+	padding: 8px $side-pad 7px;
+	border-bottom: 1px solid #ddd;
+	position: relative;
+	@include pie-clearfix;
+}
+
+.style-example-rel {
+	position: relative;
+}
+
+.style-h {
+	font-size: 12px;
+	color: #999;
+	@include float(left);
+}
+
+.code-btn {
+	font-size: em(9);
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: #999;
+	padding: 5px 11px 6px;
+	margin-top: -4px;
+	position: absolute;
+	right: 10px;
+	@include border-radius(100px);
+	@include trans;
+	@include user-select;
+	&:hover {
+		background-color: #ddd;
+		cursor: pointer;
+	}
+}
+
+//
+// Details
+//
+
+.style-details {
+	@include trans;
+	height: 0;
+	display: none;
+	border-top: 1px solid #e5e5e5;
+	background-color: #333;
+	@include border-radius(0 0 2px 2px);
+	> .inner {
+		padding: 14px $side-pad;
+	}
+
+	// Show and hide details
+	.details-off &,
+	.details-all-on .details-off &	{
+		// Second line allows for toggling
+		// of individual snips while the
+		// show all button is active
+		display: none;
+	}
+	.details-on &,
+	.details-all-on & {
+		display: block;
+		height: auto;
+	}
+}
+
+.detail-h {
+	font: normal bold em(11) $style-sans;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	margin-bottom: 8px;
+	color: #fff;
+	@include opacity(.6);
+}
+
+.style-meta {
+	border-bottom: 1px solid #444;
+}
+
+.code-example {
+	.detail-h:hover {
+		cursor: pointer;
+	}
+}
+
+.code-copy {
+	display: inline-block;
+	text-indent: -9999em;
+	height: 20px;
+	width: 19px;
+	margin-left: 2px;
+	top: -3px;
+	// TODO:
+	// - Change image-url path in config.rb
+	// - Add icon-copy or remove completely
+	//background: transparent image-url('icon-copy.png') no-repeat 50% 50%;
+	position: relative;
+	@include opacity(0);
+	@include trans;
+
+	.touch &,
+	.detail-h:hover & {
+		@include opacity(1);
+	}
+}
+
+.detail-list {
+	max-width: 600px;
+	list-style: square outside;
+	padding: 0 0 0 22px;
+	color: #bbb;
+	> li {
+		margin-bottom: 6px;
+		}
+	> li > p {
+		color: #ddd;
+		}
+	}
+
+//
+// Code
+//
+
+.html-code {
+	padding: 0;
+	color: #666;
+	font: normal 12px/130% $mono;
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	&::-moz-selection {
+		background-color: rgba(0,0,0,.1);
+		color: #fff;
+		text-shadow: none;
+	}
+	&::selection {
+		background-color: rgba(0,0,0,.1);
+		color: #fff;
+		text-shadow: none;
+		-webkit-appearance: none;
+	}
+
+	.nocode { background-color: none; color: #000 }
+	.str { color: #ffa0a0 } /* string  - pink */
+	.kwd { color: #f0e68c; font-weight: bold }
+	.com { color: #ffa0a0 } /* comment - skyblue */
+	.typ { color: #98fb98 } /* type    - lightgreen */
+	.lit { color: #cd5c5c } /* literal - darkred */
+	.pun { color: rgba(255, 255, 255, .35); }    /* punctuation */
+	.tag { color: #f0e68c; font-weight: bold } /* html/xml tag    - lightyellow */
+	.atn { color: #bdb76b; font-weight: bold } /* attribute name  - khaki */
+	.atv { color: #87ceeb } /* attribute value - pink */
+	.dec { color: #98fb98 } /* decimal         - lightgreen */
+	.pln { color: rgba(255, 255, 255, .5);
+
+	&:first-child {
+		width: 20px;
+		height: 14px;
+		@include inline-block;  }
+	}    // plaintext
+
+	li:last-child .pln:first-child {
+		width: 0;
+		margin-top: 4px; }
+
+	.highlight {
+		color: rgba(179, 45, 71, 1.0);
+		}
+} // .html-code
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums { margin-top: 0; margin-bottom: 0; color: #AEAEAE } /* IE indents via margin-left */
+@for $i from 0 through 50 {
+	li.L#{$i} {
+		list-style-type: none;
+		}
+	}
+/* Alternate shading for lines */
+li.L1,li.L3,li.L5,li.L7,li.L9 { }
+
+@media print {
+  pre { background-color: none }
+  pre .str, code .str { color: #060 }
+  pre .kwd, code .kwd { color: #006; font-weight: bold }
+  pre .com, code .com { color: #600; font-style: italic }
+  pre .typ, code .typ { color: #404; font-weight: bold }
+  pre .lit, code .lit { color: #044 }
+  pre .pun, code .pun { color: #440 }
+  pre .pln, code .pln { color: #000 }
+  pre .tag, code .tag { color: #006; font-weight: bold }
+  pre .atn, code .atn { color: #404 }
+  pre .atv, code .atv { color: #060 }
+}
+
+
