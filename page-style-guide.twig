@@ -1,0 +1,34 @@
+{# Style Guide #}
+
+{% extends "/style-guide/templates/style-guide.twig" %}
+
+{% set body_classes = 'style-bd-outer auto' %}
+
+{% block header_scripts %}
+    <link rel="stylesheet" type="text/css" href="{{path}}/style-guide/css/style-guide.css"/>
+{% endblock header_scripts %}
+
+{% block content %}
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~	-->
+	<!-- Header 								-->
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~	-->
+	<header id="style-hdr" class="style-hdr">
+		<h1 class="style-page-h">{{client}} <i class="thin">Style Library</i></h1>
+	</header> <!--style-hdr -->
+
+	<nav class="controls-nav">
+		<!-- <a href="#URL:open-nav" class="nav-trigger"> </a> -->
+		<ul class="size-list controls-nav-list">
+			<li class="size-li"><a href="#" class="size-a size-a-small">Small</a></li>
+			<li class="size-li"><a href="#" class="size-a size-a-medium">Medium</a></li>
+			<li class="size-li"><a href="#" class="size-a size-a-large">Large</a></li>
+			<li class="size-li"><a href="#" class="size-a size-a-auto">Auto</a></li>
+		</ul>
+		<a class="all-code-btn details-trigger"><i class="verb">Show</i> All Code</a>
+	</nav>
+
+
+	<!-- Style Guide Frame -->
+	<iframe src="style-guide/style-guide-source" class="style-guide-inner" name="style-guide-inner" id="style-guide-inner"></iframe>
+
+{% endblock content %}
