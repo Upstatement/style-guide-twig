@@ -18,7 +18,18 @@ This package ships with some standard patterns (buttons, text styles, section he
 2. **Add To Your Project** Place the folder in top level of your theme, this will be something like `wp-content/themes/[your theme name]` 
 3. **Install Dependencies** Navigate to the folder in terminal. Run `bower install`
 4. **Process CSS** Navigate to the folder in terminal. Run `compass watch`
-5. **Render the Style Guide** WordPress needs to know the Style Guide exists in order to render it. You’ll need to point WP to the two twig templates that show the Style Guide, `page-style-guide.twig` and `page-style-guide-source.twig`. These can be found at the top level of this repository. 
+5. **Render the Style Guide** WordPress needs to know the Style Guide exists in order to render it. You’ll need to point WP to the two twig templates that show the Style Guide, `page-style-guide.twig` and `page-style-guide-source.twig`. These can be found at the top level of this repository. To do this, you have to take two steps. 
+
+	* First, **move the `page-style-guide.twig` and `page-style-guide-source.twig` files** to a directory where WordPress will find the `page-` prefix and render pages. This is commonly a folder named `views` or `templates` and probably contains several other pages with the same prefix.
+
+	* Second, **create the pages in the WordPress Pages menu**. The pages should be named Style Guide and Style Guide Source. It’s important that their permalinks exactly match the name of the files between the `page-` prefix and `.twig` suffix. Here’s what it should look like …
+
+	_Style Guide_
+	![Style Guide](http://i.imgur.com/1gHvvfS.jpg)
+
+	_Style Guide Source_
+	![Style Guide Source](http://i.imgur.com/XM2tVRY.jpg)
+
 
 ### How To Use
 
