@@ -8,15 +8,14 @@
 {% set style_mod = 'style-guide/templates/components/style-mod.twig' %}
 
 {% block header_scripts %}
-    <link rel="stylesheet" type="text/css" href="//cloud.typography.com/761468/803902/css/fonts.css" />
-    <link rel="stylesheet" type="text/css" href="{{path}}/css/backgrounds.css"/>
-    <link rel="stylesheet" type="text/css" href="{{path}}/css/site.css"/>
+   {# Your Fonts, CSS, JS, etc. go here #}
+
     <link rel="stylesheet" type="text/css" href="{{path}}/style-guide/css/style-guide-source.css"/>
     <link rel="stylesheet" type="text/css" href="{{path}}/style-guide/css/style-guide-overrides.css"/>
 {% endblock header_scripts %}
 
 {% block footer_scripts %}
-	<script type="text/javascript" src="/style-guide/bower_components/google-code-prettify/bin/prettify.min.js"></script>
+	<script type="text/javascript" src="{{path}}/style-guide/bower_components/google-code-prettify/bin/prettify.min.js"></script>
 {% endblock footer_scripts %}
 
 
