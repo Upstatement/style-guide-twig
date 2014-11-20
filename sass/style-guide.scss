@@ -8,10 +8,17 @@
 @import "components/style-guide-imports.scss";
 
 //
-// iframe
+// Universal
 //
 
-a { text-decoration: none; }
+a 	{ text-decoration: none; }
+i  	{ font-style: normal;	}
+
+
+
+//
+// iframe
+//
 
 .style-guide-inner {
 	@include transition-property(transform, width);
@@ -39,6 +46,8 @@ a { text-decoration: none; }
 		margin-top: 40px;
 	}
 }
+
+
 
 //
 // Layout
@@ -78,9 +87,6 @@ a { text-decoration: none; }
 	max-width:1074px;
 }
 
-i {
-	font-style: normal;
-}
 
 
 //
@@ -206,6 +212,8 @@ i {
 	text-rendering: optimizeLegibility;
 }
 
+
+
 //
 // Controls Nav
 //
@@ -324,6 +332,43 @@ i {
 		cursor: pointer;
 	}
 }
+
+
+
+//
+// Colors
+//
+
+.color-mod {
+	width: 80px;
+	height: 110px;
+	display: inline-block;
+	position: relative;
+	margin: 10px 20px 10px 0;
+	border: 1px solid #ccc;
+}
+
+.color-txt {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	padding: 5px 0;
+	bottom: 0;
+	background-color: white;
+	border: 1px solid #ccc;
+}
+
+.color-name {
+	font: 600 12px $style-sans;
+	display: block;
+}
+
+.color-hex {
+	font: 400 12px $style-sans;
+	text-transform: uppercase;
+}
+
+
 
 //
 // Style Guide Navigation

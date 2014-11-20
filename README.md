@@ -1,7 +1,5 @@
-Upstatement Style Guide
-================
-
-Template for Twig/Timber
+# Upstatement Style Guide
+#### Template for Twig/Timber
 
 ### What Is This?
 A style guide starter theme that helps display typography, objects, and other design patterns. It’s templated using Twig & Timber for easy inclusion in our WordPress projects. 
@@ -57,13 +55,14 @@ Use the `header_scripts` and `footer_scripts` blocks to add your custom elements
 #### Add Your Elements
 You’ll want to augment the Style Guide with your own HTML components — typography, teases, buttons, etc. Do this in file named `page-style-guide-source.twig`.
 
+**Basic Style Example**
 The template accepts raw HTML as well as [Twig includes](http://twig.sensiolabs.org/doc/tags/include.html). In the most basic template, you can simply name your component and add the appropriate HTML.
 
 ```twig
 {#
-~~~~~~~~~~~~~~~~~~
+~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 Headlines
-~~~~~~~~~~~~~~~~~~
+~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 #}
 {% embed style_mod
    with { title:'Headlines' } %}
@@ -77,13 +76,14 @@ Headlines
 {% endembed %}
 ```  
 
-You can also add a description of the component and give advice for when to use it in the design using the `descriptions` variable. Here’s an example:
+**Adding Descriptions**
+You can also add a description of the component and give advice for when to use it in the design using the `descriptions` variable.
 
 ```twig
 {#
-~~~~~~~~~~~~~~~~~~
+~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 Section Headers
-~~~~~~~~~~~~~~~~~~
+~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 #}
 {% embed style_mod
 	 with { title:'Section Headers' } %}
@@ -102,6 +102,29 @@ Section Headers
 	{% endblock markup %}
 
 {% endembed %}
+```
+
+**Adding Custom Classes**
+Each style mod receives a unique class to help you style overrides when necessary. You can also add your own custom class to the `style-mod` container that wraps your HTML via the `class` variable, passed using the `with` directive on the style_mod embed. Here’s an example in use.
+
+```twig
+{#
+~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+Article Pullquote
+~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+#}
+{% embed style_mod
+   with { title:'Article Pullquote',
+          class: 'no-dropcap’
+} %}
+
+  {% block markup %}
+    <div class="article-txt">
+      <p class="pullquote">Assume that no search for this weapon was underway; our best guess is that even <em>Sherlock Holmes</em> never would have found it in the absence of the confession.</p>
+      </div> <!-- /article-txt -->
+  {% endblock markup %}
+
+{% endembed %}    
 ```
 
 #### Overrides

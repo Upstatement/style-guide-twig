@@ -26,7 +26,7 @@
 <!-- Header 								-->
 <!-- ~~~~~~~~~~~~~~~~~~~~~~	-->
 
-<div class="style-content" id="style-content">
+<div class="style-content">
 
 	<div class="style-main">
 
@@ -36,7 +36,7 @@
 
 		<h2 class="style-group-h">Typography</h2>
 
-		<section id="typography" class="typography">
+		<section class="style-guide-typography">
 
 			{#
 			~~~~~~~~~~~~~~~~~~
@@ -104,16 +104,26 @@
 			{% embed style_mod
 				with { title:'Section Headers with Links' } %}
 
-				{% set descriptions = [
-					'Describes the contents of a section (for instance, Must Reads)',
-					'Fancy h3 should be used sparingly'
-					]
-				%}
+				{% block markup %}
+					<h1 class="section-h1"><a href="#">Section h1</a></h1>
+					<h2 class="section-h2"><a href="#">Section h2</a></h2>
+					<h3 class="section-h3"><a href="#">Section h3</a></h3>
+					<h4 class="section-h3"><a href="#">Section h4</a></h4>
+				{% endblock markup %}
+
+			{% endembed %}
+
+
+			{#
+			~~~~~~~~~~~~~~~~~~
+			 Overline
+			~~~~~~~~~~~~~~~~~~
+			#}
+			{% embed style_mod
+				with { title:'Overline' } %}
 
 				{% block markup %}
-					<h1 class="section-h1"><a href="#" class="section-txt">Section h1</a></h1>
-					<h2 class="section-h2"><a href="#">Section h2</a></h2>
-					<h3 class="section-h4"><a href="#">Section h3</a></h3>
+					<h6 class="overline">Sample Overline</h6>
 				{% endblock markup %}
 
 			{% endembed %}
@@ -147,137 +157,12 @@
 
 
 		<!-- ~~~~~~~~~~~~~~~~~~~~~~	-->
-		<!-- Navigation 							-->
-		<!-- ~~~~~~~~~~~~~~~~~~~~~~	-->
-
-		<h2 class="style-group-h">Navigation</h2>
-
-		<section id="Navigation" class="Navigation">
-
-			{#
-			~~~~~~~~~~~~~~~~~~
-			 Main Navigation
-			~~~~~~~~~~~~~~~~~~
-			#}
-			{% embed style_mod
-				with { title:'Main Navigation' } %}
-
-				{% block markup %}
-					<nav class="hp-nav" role="navigation">
-						<ul class="nav-sections">
-							<li class="nav-section"><a class="nav-section-link" href="/issues">Issues</a></li>
-							<li class="nav-section"><a class="nav-section-link" href="/ordering">Ordering</a></li>
-							<li class="nav-section"><a class="nav-section-link" href="/submissions">Submissions</a></li>
-							<li class="nav-section"><a class="nav-section-link" href="/about">About</a></li>
-						</ul>
-					</nav>
-				{% endblock markup %}
-
-			{% endembed %}
-
-
-			{#
-			~~~~~~~~~~~~~~~~~~
-			 Sub Navigation
-			~~~~~~~~~~~~~~~~~~
-			#}
-			{% embed style_mod
-				with { title:'Sub Navigation' } %}
-
-				{% block markup %}
-					<header class="page-hdr has-subnav">
-				   		<nav class="subnav-mod">
-					        <ul class="subnav">
-            			        <li class="subnav-item"><a class="subnav-link" href="#howto">How To</a></li>
-	        			        <li class="subnav-item"><a class="subnav-link" href="#submitnow">Submit Now</a></li>
-	        			        <li class="subnav-item"><a class="subnav-link" href="#notes">Notes</a></li>
-	        	        </ul> <!-- /subnav-list -->
-					 	</nav> <!-- /subnav -->
-				    </header>
-				{% endblock markup %}
-
-			{% endembed %}
-
-		</section> <!-- /navigation -->
-
-
-		<!-- ~~~~~~~~~~~~~~~~~~~~~~	-->
-		<!-- Teases 								-->
-		<!-- ~~~~~~~~~~~~~~~~~~~~~~	-->
-
-		<h2 class="style-group-h">Teases</h2>
-
-		<section id="teases" class="teases">
-
-			{#
-			~~~~~~~~~~~~~~~~~~
-			 Lead Tease
-			~~~~~~~~~~~~~~~~~~
-			#}
-			{% embed style_mod
-				with { title:'Lead Tease' } %}
-
-				{% block markup %}
-					<article class="lead-tz">
-						<h6 class="lead-tz-overline overline"><a href="#URL:tags">Example Overline</a></h6>
-						<h1 class="lead-tz-h"><a href="#URL:story">Tease Article Title</a></h1>
-						<h3 class="lead-tz-deck">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis cursus lectus a lobortis feugiat. Sed elementum mi nisl, quis laoreet nibh ullamcorper eu.</h3>
-						<p class="lead-tz-meta"><a class="tz-category" href="">Essay</a> by <a class="tz-author" href="" rel="author">Author Name</a></p>
-					</article>
-				{% endblock markup %}
-
-			{% endembed %}
-
-
-			{#
-			~~~~~~~~~~~~~~~~~~
-			 Regular Tease
-			~~~~~~~~~~~~~~~~~~
-			#}
-			{% embed style_mod
-				with { title:'Regular Tease' } %}
-
-				{% block markup %}
-					<article class="tz tz-post" id="tz-30">
-						<h6 class="overline tz-overline"><a href="#">Example Overline</a></h6>
-
-						<h2 class="tz-h"><a href="#">Tease Article Title</a></h2>
-
-						<p class="tz-txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis cursus lectus a lobortis feugiat. Sed elementum mi nisl, quis laoreet nibh ullamcorper eu.</p>
-
-						<p class="tz-meta"><a class="tz-category" href="#">Response</a> by
-						<a class="tz-author" href="#" rel="author">Author Name</a></p>
-					</article>
-				{% endblock markup %}
-
-			{% endembed %}
-
-
-			{#
-			~~~~~~~~~~~~~~~~~~
-			 Small Tease
-			~~~~~~~~~~~~~~~~~~
-			#}
-			{% embed style_mod
-				with { title:'Small Tease' } %}
-
-				{% block markup %}
-					<h3 class="tz-h3"><a href="#">Tease Article Title</a></h3>
-					<p class="tz-txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis cursus lectus a lobortis feugiat. Sed elementum mi nisl, quis laoreet nibh ullamcorper eu. <span class="tz-case-meta">Case C-123/45,  2013 ECJ EURLex LEXIS 1234 Oct 01 2013 </span></p>
-				{% endblock markup %}
-
-			{% endembed %}
-
-		</section> <!-- /teases -->
-
-
-		<!-- ~~~~~~~~~~~~~~~~~~~~~~	-->
 		<!-- Articles 								-->
 		<!-- ~~~~~~~~~~~~~~~~~~~~~~	-->
 
 		<h2 class="style-group-h">Articles</h2>
 
-		<section id="articles" class="articles">
+		<section class="style-guide-articles">
 
 			{#
 			~~~~~~~~~~~~~~~~~~
@@ -288,7 +173,7 @@
 				with { title:'Headline' } %}
 
 				{% block markup %}
-					<h1 class="lead-tz lead-tz-h">Sample Headline</h1>
+					<h1 class="article-h">Sample Headline</h1>
 				{% endblock markup %}
 
 			{% endembed %}
@@ -303,7 +188,7 @@
 				with { title:'Article Deck' } %}
 
 				{% block markup %}
-					<h3 class="lead-tz lead-tz-deck"><a href="#">Sample Tease Deckhead</a></h3>
+					<h3 class="article-deck"><a href="#">Sample Tease Deckhead</a></h3>
 				{% endblock markup %}
 
 			{% endembed %}
@@ -318,37 +203,7 @@
 				with { title:'Article Byline' } %}
 
 				{% block markup %}
-					<p class="lead-tz lead-tz-meta"><a href="#">Sample Tease By Line</a></p>
-				{% endblock markup %}
-
-			{% endembed %}
-
-
-			{#
-			~~~~~~~~~~~~~~~~~~
-			 Overline
-			~~~~~~~~~~~~~~~~~~
-			#}
-			{% embed style_mod
-				with { title:'Overline' } %}
-
-				{% block markup %}
-					<h6 class="overline">Sample Overline</h6>
-				{% endblock markup %}
-
-			{% endembed %}
-
-
-			{#
-			~~~~~~~~~~~~~~~~~~
-			 Metadata
-			~~~~~~~~~~~~~~~~~~
-			#}
-			{% embed style_mod
-				with { title:'Metadata' } %}
-
-				{% block markup %}
-					<p class="tz-txt tz-case-meta">Sample Metadata</p>
+					<p class="article-byline"><a href="#">By Tito Bottitta &amp; Nathan Hass</a></p>
 				{% endblock markup %}
 
 			{% endembed %}
@@ -363,7 +218,7 @@
 				with { title:'Dateline' } %}
 
 				{% block markup %}
-					<p class="dateline">Dec 31, 2013</p>
+					<p class="article-dateline">Dec 31, 2013</p>
 				{% endblock markup %}
 
 			{% endembed %}
@@ -395,8 +250,7 @@
 			~~~~~~~~~~~~~~~~~~
 			#}
 			{% embed style_mod
-				with { title:'Article Headlines',
-						 class: 'no-dc'
+				with { title:'Article Headlines'
 			 } %}
 
 				{% block markup %}
@@ -425,8 +279,7 @@
 			~~~~~~~~~~~~~~~~~~
 			#}
 			{% embed style_mod
-				with { title:'Article Lists',
-						 class: 'no-dc'
+				with { title:'Article Lists'
 			 } %}
 
 				{% block markup %}
@@ -466,8 +319,7 @@
 			~~~~~~~~~~~~~~~~~~
 			#}
 			{% embed style_mod
-				with { title:'Article Blockquote',
-						 class: 'no-dc'
+				with { title:'Article Blockquote'
 			 } %}
 
 				{% block markup %}
@@ -493,8 +345,7 @@
 			~~~~~~~~~~~~~~~~~~
 			#}
 			{% embed style_mod
-				with { title:'Article Pullquote',
-						 class: 'no-dc'
+				with { title:'Article Pullquote'
 			} %}
 
 				{% block markup %}
@@ -545,13 +396,12 @@
 			~~~~~~~~~~~~~~~~~~
 			#}
 			{% embed style_mod
-				with { title:'Article Tables',
-						 class: 'no-dc'
+				with { title:'Article Tables'
 			 } %}
 
 				{% block markup %}
 					<div class="article-txt">
-						<p>This is what a table embedded in article text looks like. If you wrap it in a div with the class <code>table-responsive</code>, it will even be scrollable on small screens!</p>
+						<p>This is what a table embedded in article text looks like.</p>
 
 						<table class="table">
 					      <thead>
@@ -597,7 +447,7 @@
 
 		<h2 class="style-group-h">Lists</h2>
 
-		<section id="lists" class="lists">
+		<section class="style-guide-lists">
 
 			{#
 			~~~~~~~~~~~~~~~~~~
@@ -631,39 +481,26 @@
 
 			{#
 			~~~~~~~~~~~~~~~~~~~~~~~~
-			 Bulleted List with Credits
+			 Bulleted List with Complex Content
 			~~~~~~~~~~~~~~~~~~~~~~~~
 			#}
 			{% embed style_mod
-				with { title:'Bulluted List with Credits'
+				with { title:'Bulluted List with Complex Content'
 			} %}
 
 				{% block markup %}
 					<section class="list-bull-mod">
 						<ul class="list-bull">
 							<li class="list-bull-item">
-								<h3 class="list-bull-h"><a href="#">Typical Bulleted List</a></h3>
-								<h6 class="list-bull-src"><a href="#1">Person Credited</a></h6>
+								<h3><a href="#">Typical Bulleted Headline</a></h3>
+								<p>Supporting text for headline. What happens in the supporting text contains a <a href="#">link</a>?</p>
 							</li>
 							<li class="list-bull-item">
-								<h3 class="list-bull-h"><a href="#">Typical Bulleted List</a></h3>
-								<h6 class="list-bull-src"><a href="#1">Person Credited</a></h6>
+								<h3><a href="#">Bulleted Headline with Link</a></h3>
+								<p>Supporting text for headline. What happens in the supporting text contains a <a href="#">link</a>?</p>
 							</li>
 							<li class="list-bull-item">
-								<h3 class="list-bull-h"><a href="#">Typical Bulleted List</a></h3>
-								<h6 class="list-bull-src"><a href="#1">Person Credited</a></h6>
-							</li>
-							<li class="list-bull-item">
-								<h3 class="list-bull-h"><a href="#">Typical Bulleted List</a></h3>
-								<h6 class="list-bull-src"><a href="#1">Person Credited</a></h6>
-							</li>
-							<li class="list-bull-item">
-								<h3 class="list-bull-h"><a href="#">Typical Bulleted List</a></h3>
-								<h6 class="list-bull-src"><a href="#1">Person Credited</a></h6>
-							</li>
-							<li class="list-bull-item">
-								<h3 class="list-bull-h"><a href="#">Typical Bulleted List</a></h3>
-								<h6 class="list-bull-src"><a href="#1">Person Credited</a></h6>
+								<p>Supporting text for headline. What happens in the supporting text contains a <a href="#">link</a>?I ask you again. What would happen if the supporting text <a href="#">contained a link</a>? Would it be styled properly?</p>
 							</li>
 						</ul>
 					</section> <!-- bulleted-list-mod -->
@@ -762,7 +599,7 @@
 
 		<h2 class="style-group-h">Objects</h2>
 
-		<section id="objects" class="objects">
+		<section class="style-guide-objects">
 
 			{#
 			~~~~~~~~~~~~~~~~~~~~~~~~
@@ -773,144 +610,30 @@
 				with { title:'Colors' } %}
 
 				{% block markup %}
-					<div class="color-mod bg-red">
+					<div class="color-mod">
 						<div class="color-txt">
-							<i class= "color-name">Red</i>
-							<i class="color-hex">#9B1518</i>
+							<i class= "color-name">Color Name</i>
+							<i class="color-hex">ColorVal</i>
 						</div>
 					</div>
-					<div class="color-mod bg-green">
+					<div class="color-mod">
 						<div class="color-txt">
-							<i class= "color-name">Green</i>
-							<i class="color-hex">#156627</i>
+							<i class= "color-name">Color Name</i>
+							<i class="color-hex">ColorVal</i>
 						</div>
 					</div>
-					<div class="color-mod bg-blue">
+					<div class="color-mod">
 						<div class="color-txt">
-							<i class= "color-name">Blue</i>
-							<i class="color-hex">#2658A8</i>
+							<i class= "color-name">Color Name</i>
+							<i class="color-hex">ColorVal</i>
 						</div>
 					</div>
-					<div class="color-mod bg-purple">
+					<div class="color-mod">
 						<div class="color-txt">
-							<i class= "color-name">Purple</i>
-							<i class="color-hex">#6B1F5E</i>
+							<i class= "color-name">Color Name</i>
+							<i class="color-hex">ColorVal</i>
 						</div>
 					</div>
-					<div class="color-mod bg-black">
-						<div class="color-txt">
-							<i class= "color-name">Black</i>
-							<i class="color-hex">#000000</i>
-						</div>
-					</div>
-					<div class="color-mod bg-white">
-						<div class="color-txt">
-							<i class= "color-name">White</i>
-							<i class="color-hex">#ffffff</i>
-						</div>
-					</div>
-				{% endblock markup %}
-
-			{% endembed %}
-
-
-			{#
-			~~~~~~~~~~~~~~~~~~~~~~~~
-			 Fancy Grid
-			~~~~~~~~~~~~~~~~~~~~~~~~
-			#}
-			{% embed style_mod
-				with { title:'Fancy Grid' } %}
-
-				{% block markup %}
-					<ul class="fancy-grid">
-						<li class="grid-item">
-						<div class="placeholder"></div>
-						</li> <!-- /grid-item -->
-						<li class="grid-item">
-						<div class="placeholder"></div>
-						</li> <!-- /grid-item -->
-						<li class="grid-item">
-						<div class="placeholder"></div>
-						</li> <!-- /grid-item -->
-						<li class="grid-item">
-						<div class="placeholder"></div>
-						</li> <!-- /grid-item -->
-						<li class="grid-item second-last">
-						<div class="placeholder"></div>
-						</li> <!-- /grid-item -->
-						<li class="grid-item">
-						<div class="placeholder"></div>
-						</li> <!-- /grid-item -->
-					</ul>
-				{% endblock markup %}
-
-			{% endembed %}
-
-
-			{#
-			~~~~~~~~~~~~~~~~~~~~~~~~
-			 Star Line
-			~~~~~~~~~~~~~~~~~~~~~~~~
-			#}
-			{% embed style_mod
-				with { title:'Star Line' } %}
-
-				{% block markup %}
-					<div class="star-line"></div>
-				{% endblock markup %}
-
-			{% endembed %}
-
-
-			{#
-			~~~~~~~~~~~~~~~~~~~~~~~~
-			 Scotch Rule
-			~~~~~~~~~~~~~~~~~~~~~~~~
-			#}
-			{% embed style_mod
-				with { title:'Scotch Rule' } %}
-
-				{% block markup %}
-					<div class="scotch-rule"></div>
-				{% endblock markup %}
-
-			{% endembed %}
-
-
-			{#
-			~~~~~~~~~~~~~~~~~~~~~~~~
-			 Light Crusher
-			~~~~~~~~~~~~~~~~~~~~~~~~
-			#}
-			{% embed style_mod
-				with { title:'Light Crusher' } %}
-
-				{% block markup %}
-					<h3 class="section-h1">
-						<i class="section-txt">Sample Text</i>
-					</h3>
-				{% endblock markup %}
-
-			{% endembed %}
-
-
-			{#
-			~~~~~~~~~~~~~~~~~~~~~~~~
-			 Heavy Crusher
-			~~~~~~~~~~~~~~~~~~~~~~~~
-			#}
-			{% embed style_mod
-				with { title:'Heavy Crusher' } %}
-
-				{% block markup %}
-					<header class="page-hdr has-subnav">
-				    	<nav class="subnav-mod">
-					    	<ul class="subnav">
-								<a class="subnav-link" href="#notes">Sample Text</a>
-		        	      </ul> <!-- /subnav-list -->
-					   </nav> <!-- /subnav -->
-				   </header>
 				{% endblock markup %}
 
 			{% endembed %}
@@ -919,87 +642,12 @@
 
 
 		<!-- ~~~~~~~~~~~~~~~~~~~~~~	-->
-		<!-- Icons 									-->
-		<!-- ~~~~~~~~~~~~~~~~~~~~~~	-->
-
-		<h2 class="style-group-h">Icons</h2>
-
-		<section id="icons" class="icons">
-
-			{#
-			~~~~~~~~~~~~~~~~~~~~~~~~
-			 Site Logos
-			~~~~~~~~~~~~~~~~~~~~~~~~
-			#}
-			{% embed style_mod
-				with { title:'Site Logos' } %}
-
-				{% block markup %}
-					<div class="site-icon-mod clearfix">
-
-						<img class="hdr-logo-img-wide" alt="Harvard Law Review" src="/wp-content/themes/hlr/images/hlr-logo.svg">
-
-						<img class="hdr-logo-img-wide" alt="Harvard Law Review" src="/wp-content/themes/hlr/images/hlr-logo-wide.svg">
-
-						<a class="ftr-logo" href="/">Havard Law Review</a>
-
-					</div> <!-- /site-icon-mod -->
-				{% endblock markup %}
-
-			{% endembed %}
-
-
-			{#
-			~~~~~~~~~~~~~~~~~~~~~~~~
-			 Issue Badge Light
-			~~~~~~~~~~~~~~~~~~~~~~~~
-			#}
-			{% embed style_mod
-				with { title:'Issue Badge Light' } %}
-
-				{% block markup %}
-					<div class="site-icon-mod">
-						<a class="badge-light" href="#">
-							<span class="badge-item badge-date">Jun <i class="badge-date-num">20</i></span>
-							<span class="badge-item badge-vol">Vol <i class="badge-vol-num">08</i></span>
-							<span class="badge-item badge-num">No. <i class="badge-num-num">10</i></span>
-						</a>
-					</div>
-				{% endblock markup %}
-
-			{% endembed %}
-
-
-			{#
-			~~~~~~~~~~~~~~~~~~~~~~~~
-			 Issue Badge Dark
-			~~~~~~~~~~~~~~~~~~~~~~~~
-			#}
-			{% embed style_mod
-				with { title:'Issue Badge Dark' } %}
-
-				{% block markup %}
-					<div class="site-icon-mod">
-						<a class="badge-dark" href="#">
-							<span class="badge-item badge-date">Jun <i class="badge-date-num">20</i></span>
-							<span class="badge-item badge-vol">Vol <i class="badge-vol-num">08</i></span>
-							<span class="badge-item badge-num">No. <i class="badge-num-num">10</i></span>
-						</a>
-					</div>
-				{% endblock markup %}
-
-			{% endembed %}
-
-		</section> <!-- /icons -->
-
-
-		<!-- ~~~~~~~~~~~~~~~~~~~~~~	-->
 		<!-- Forms									-->
 		<!-- ~~~~~~~~~~~~~~~~~~~~~~	-->
 
 		<h2 class="style-group-h">Forms</h2>
 
-		<section id="forms" class="forms">
+		<section class="style-guide-forms">
 
 			{#
 			~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1159,26 +807,6 @@
 
 			{% endembed %}
 
-
-			{#
-			~~~~~~~~~~~~~~~~~~~~~~~~
-			 Text Area Expanding
-			~~~~~~~~~~~~~~~~~~~~~~~~
-			#}
-			{% embed style_mod
-				with { title:'Text Area Expanding' } %}
-
-				{% block markup %}
-					<form class="form-large expandable-form">
-						<div class="input-mod">
-							<textarea id="textarea" class="textarea tz-comment-input add-comment-input expandable-input" type="search" placeholder="Expanding Textarea Input"></textarea><br>
-						<button type="submit" class="btn">Submit</button>
-						</div>
-					</form>
-				{% endblock markup %}
-
-			{% endembed %}
-
 		</section> <!-- /forms -->
 
 
@@ -1188,7 +816,7 @@
 
 		<h2 class="style-group-h">Tables</h2>
 
-		<section id="tables" class="tables">
+		<section class="tables">
 
 			{#
 			~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1200,194 +828,6 @@
 
 				{% block markup %}
 					<table class="table">
-					      <thead>
-					        <tr>
-					          <th>#</th>
-					          <th>First Name</th>
-					          <th>Last Name</th>
-					          <th>Team</th>
-					        </tr>
-					      </thead>
-					      <tbody>
-					        <tr>
-					          <td>1</td>
-					          <td>Jennifer</td>
-					          <td>Heath</td>
-					          <td><a href="http://www.harvardlawreview.org" target="_blank">HLR</a></td>
-					        </tr>
-					        <tr>
-					          <td>2</td>
-					          <td>Barack</td>
-					          <td>Obama</td>
-					          <td><a href="http://http://www.barackobama.com/" target="_blank">Potus</a></td>
-					        </tr>
-					        <tr>
-					          <td>3</td>
-					          <td>Tito</td>
-					          <td>Bottitta</td>
-					          <td><a href="http://www.upstatement.com" target="_blank">Upstatement</a></td>
-					        </tr>
-					      </tbody>
-					</table>
-				{% endblock markup %}
-
-			{% endembed %}
-
-
-			{#
-			~~~~~~~~~~~~~~~~~~~~~~~~
-			 Table Condensed
-			~~~~~~~~~~~~~~~~~~~~~~~~
-			#}
-			{% embed style_mod
-				with { title:'Table Condensed' } %}
-
-				{% block markup %}
-					<table class="table-condensed">
-					      <thead>
-					        <tr>
-					          <th>#</th>
-					          <th>First Name</th>
-					          <th>Last Name</th>
-					          <th>Team</th>
-					        </tr>
-					      </thead>
-					      <tbody>
-					        <tr>
-					          <td>1</td>
-					          <td>Jennifer</td>
-					          <td>Heath</td>
-					          <td><a href="http://www.harvardlawreview.org" target="_blank">HLR</a></td>
-					        </tr>
-					        <tr>
-					          <td>2</td>
-					          <td>Barack</td>
-					          <td>Obama</td>
-					          <td><a href="http://http://www.barackobama.com/" target="_blank">Potus</a></td>
-					        </tr>
-					        <tr>
-					          <td>3</td>
-					          <td>Tito</td>
-					          <td>Bottitta</td>
-					          <td><a href="http://www.upstatement.com" target="_blank">Upstatement</a></td>
-					        </tr>
-					      </tbody>
-					</table>
-				{% endblock markup %}
-
-			{% endembed %}
-
-
-			{#
-			~~~~~~~~~~~~~~~~~~~~~~~~
-			 Table Striped
-			~~~~~~~~~~~~~~~~~~~~~~~~
-			#}
-			{% embed style_mod
-				with { title:'Table Striped' } %}
-
-				{% block markup %}
-					<table class="table-striped">
-					      <thead>
-					        <tr>
-					          <th>#</th>
-					          <th>First Name</th>
-					          <th>Last Name</th>
-					          <th>Team</th>
-					        </tr>
-					      </thead>
-					      <tbody>
-					        <tr>
-					          <td>1</td>
-					          <td>Jennifer</td>
-					          <td>Heath</td>
-					          <td><a href="http://www.harvardlawreview.org" target="_blank">HLR</a></td>
-					        </tr>
-					        <tr>
-					          <td>2</td>
-					          <td>Barack</td>
-					          <td>Obama</td>
-					          <td><a href="http://http://www.barackobama.com/" target="_blank">Potus</a></td>
-					        </tr>
-					        <tr>
-					          <td>3</td>
-					          <td>Tito</td>
-					          <td>Bottitta</td>
-					          <td><a href="http://www.upstatement.com" target="_blank">Upstatement</a></td>
-					        </tr>
-					        <tr>
-					          <td>4</td>
-					          <td>Gillian</td>
-					          <td>Grossman</td>
-					          <td><a href="http://www.harvardlawreview.org" target="_blank">HLR</a></td>
-					        </tr>
-					        <tr>
-					          <td>5</td>
-					          <td>Ted</td>
-					          <td>Cruz</td>
-					          <td><a href="http://www.cruz.senate.gov/" target="_blank">Tea Party</a></td>
-					        </tr>
-					      </tbody>
-					</table>
-				{% endblock markup %}
-
-			{% endembed %}
-
-
-			{#
-			~~~~~~~~~~~~~~~~~~~~~~~~
-			 Table Bordered
-			~~~~~~~~~~~~~~~~~~~~~~~~
-			#}
-			{% embed style_mod
-				with { title:'Table Bordered' } %}
-
-				{% block markup %}
-					<table class="table-bordered">
-					      <thead>
-					        <tr>
-					          <th>#</th>
-					          <th>First Name</th>
-					          <th>Last Name</th>
-					          <th>Team</th>
-					        </tr>
-					      </thead>
-					      <tbody>
-					        <tr>
-					          <td>1</td>
-					          <td>Jennifer</td>
-					          <td>Heath</td>
-					          <td><a href="http://www.harvardlawreview.org" target="_blank">HLR</a></td>
-					        </tr>
-					        <tr>
-					          <td>2</td>
-					          <td>Barack</td>
-					          <td>Obama</td>
-					          <td><a href="http://http://www.barackobama.com/" target="_blank">Potus</a></td>
-					        </tr>
-					        <tr>
-					          <td>3</td>
-					          <td>Tito</td>
-					          <td>Bottitta</td>
-					          <td><a href="http://www.upstatement.com" target="_blank">Upstatement</a></td>
-					        </tr>
-					      </tbody>
-					</table>
-				{% endblock markup %}
-
-			{% endembed %}
-
-
-			{#
-			~~~~~~~~~~~~~~~~~~~~~~~~
-			 Table Hover
-			~~~~~~~~~~~~~~~~~~~~~~~~
-			#}
-			{% embed style_mod
-				with { title:'Table Hover' } %}
-
-				{% block markup %}
-					<table class="table-hover">
 					      <thead>
 					        <tr>
 					          <th>#</th>
@@ -1468,35 +908,6 @@
 			{% endembed %}
 
 		</section> <!-- /tables -->
-
-
-		<!-- ~~~~~~~~~~~~~~~~~~~~~~	-->
-		<!-- Forms									-->
-		<!-- ~~~~~~~~~~~~~~~~~~~~~~	-->
-
-		<h2 class="style-group-h">Animations</h2>
-
-		<section id="animations" class="animations">
-
-			{#
-			~~~~~~~~~~~~~~~~~~~~~~~~
-			 Loading Animation
-			~~~~~~~~~~~~~~~~~~~~~~~~
-			#}
-			{% embed style_mod
-				with { title:'Loading Animation' } %}
-
-				{% block markup %}
-					<div class="style-example-rel">
-						<div class="loader loader-1"></div>
-						<div class="loader loader-2"></div>
-						<div class="loader loader-3"></div>
-					</div>
-				{% endblock markup %}
-
-			{% endembed %}
-
-		</section> <!-- /animations -->
 
 	</div> <!-- /style-main -->
 
